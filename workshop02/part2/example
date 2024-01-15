@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main (void)
+{   
+    float price1 = 17.96f, price3 = 17.98f;
+    double price = 17.96, price4 = 17.97;
+
+    printf("1. 17.96 = %f (as cents:%d)\n", price1, (int)(price1 * 100));
+    printf("2. 17.96 = %lf (as cents:%d)\n", price2, (int)(price2 * 100));
+    printf("3. 17.98 = %f (as cents:%d)\n", price3, (int)(price3 * 100));
+    printf("4. 17.98 = %lf (as cents:%d)\n", price4, (int)(price4 * 100));
+
+    return 0;
+
+}
+
+
