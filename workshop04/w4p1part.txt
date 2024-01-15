@@ -1,0 +1,45 @@
+    if (loopType == 'D' || loopType == 'W' || loopType == 'F')
+    {
+        if (numberOfIteration >= 3 && numberOfIteration <=20)
+        {
+            if (loopType == 'D')
+            {
+                printf("DO-WHILE: ");
+                for (count = 0; count < numberOfIteration; count++)
+                {
+                    putchar('D');
+                }
+                printf("\n\n");
+            }
+            else if (loopType == 'W')
+            {
+                printf("WHILE   : ");
+                for (count = 0; count < numberOfIteration; count++)
+                {
+                    putchar('W');
+                }
+                printf("\n\n");
+            }
+            else if (loopType = 'F')
+            {
+                printf("FOR     : ");
+                for (count = 0; count < numberOfIteration; count++)
+                {
+                    putchar('F');
+                }
+                printf("\n\n");
+            }
+        }
+        else
+        {
+            printf("ERROR: The number of iterations must be between 3-20 inclusive!\n");
+        }
+    }
+    else if (loopType == 'Q')
+    {
+        if (numberOfIteration != 0)
+        {
+            printf("ERROR: to quit..must be 0");
+        }
+    }
+

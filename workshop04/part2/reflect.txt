@@ -1,0 +1,20 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #4
+Full Name  : Andy Chong
+Student ID#: 150558229
+Email      : achong11@myseneca.ca
+Section    : NAA
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. Code formatting is important because it makes it easier to read and understand for yourself as well as others who read your code also it makes it easier to make changes within the code if there were any bugs or problems. I made by code easy to read and maintain by using concise variable names, adding comments to help understand each section of the code. I made the iteration and selection logic parts of the code easier to read by spacing out each fruits constructs separately from one another as well as implementing code blocks to allow for easy fixes to one construct without creating bugs also for maximum readability and maintainability.
+
+2. If this workshop was coded without nesting the biggest issues would be inefficient and would make the code harder to maintain, debug, understand and would make it more complex.  For example when asking user to pick how many apples when picking the products if we couldn’t use nesting we would have to write each scenario of errors separately but with nesting were able to make it so one construct can tackle all scenarios of errors as well as right answers.
+
+3. It would be inefficient to use optional path constructs instead of using the alternative path logic because it would require an “if” statement for each value between 1 and 5. It is inefficient because it would make the code harder to read and maintain as well as there being a lot of repetitive code. Also using a bunch of “if” statements you would have to check the condition for each one separately whereas if you use an “if/else” construct you can check it once and if it’s in the range it can execute the code. 
+
