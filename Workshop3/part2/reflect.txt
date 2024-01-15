@@ -1,0 +1,42 @@
+
+///////////////////////////////////////////////////////////////////////////
+                              Reflection
+                          Workshop - #3 (P2)
+Full Name  : Andy Chong
+Student ID#: 150558229
+Email      : achong11@myseneca.ca
+Section    : NAA
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. Here is the copy of the submitted code for the part of the logic number of servings to the available coffee bag weights.
+((servings >=1 && servings <=4) && (weight1 == 250)) ||
+((servings >4 && servings <= 9) && (weight1 ==  500)) ||
+((servings >9) && (weight1 ==  1000)),
+
+a) I used a total of 4 relational expressions in my code. First is >= which means left is greater than or equal to the right. Secondly i used <= which means left is less than or equal to the right. Next i used == which means that left is equal to the right. Lastly I used > which means left is greater than the right
+
+b)I used a total of 2 logical expressions in my code. First is && which means both operands are true. The second logical expression is || which means this or that, in other words one of the operands are true.
+
+2. This is the way I coded part 1 output 9 (id3 != id1) && (id3 != id2). The method I used in my code did not use DeMorgan's Law. If you were to use the DeMorgan's Law method it would look like this:  !((id3 == id1) || (id3 == id1)).
+
+3. Here are two ways you can organize variables. First way you can organize variables is by the identifiers within a single declaration.
+For example:
+char bestServed1, bestServed2, bestServed3, coffeeType1, coffeeType2, coffeeType3, coffeeStrength, cream;
+int servings, weight1, weight2, weight3;
+const double GRAMS_IN_LBS = 453.5924;
+
+The other method you can organize variables is by grouping related variables together. This method makes it easier to read and see the different variables and where they are used.
+For example:
+const double GRAMS_IN_LBS = 453.5924;
+char coffeeType1, coffeeType2, coffeeType3;
+char bestServed1, bestServed2, bestServed3;
+char coffeeStrength, cream;
+int weight1, weight2, weight3;
+int servings;
+
+Both ways however it is important to declare all variables at the top, using camel notation, avoiding too many variables as well as making variables easy to recognize.
