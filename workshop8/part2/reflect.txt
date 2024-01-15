@@ -1,0 +1,40 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #8
+Full Name  : Andy Chong
+Student ID#: 150558229
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. One benefit of returning values in two different ways is because it provides more 
+flexibility and usability. If you only need one result value, you can use the return 
+value and ignore the pointer parameter. Another benefit is that if you need to get 
+multiple result values, you can use the pass-by-reference parameter to get all of 
+it at once. Making it more versatile and easier to use. The downside is that it 
+can make the code more complex. It can make it unclear to others leading to potential 
+bugs and confusion. Lastly it makes it harder to maintain and make changes to my 
+code because there are multiple ways of returning values from 1 function, causing 
+one to make changes in multiple places.
+
+2.The function convertLbs converts lbs into both kilograms and grams which we already
+did in functions convertLbsKg and convertLbsG. This module is performing multiple
+tasks instead of one specific task. Thus, making it have low cohesion. I would 
+instead directly call them from the previous functions that already made the calculations
+instead of doing a new function. 
+A function that has high coupling is the calculateReportData function. I would combine
+it with the function getCatFoodInfo because we are setting (=) the data to a previously
+done data instead of just using what we already had to calculate report data.
+
+3. Advantages of passing structures is that it can improve performance by taking 
+up less memory usage. Instead of passing each member of a struct as separate arguments,
+you can pass it by reference, rather than passing by value. You can make it more efficient 
+by using pointers instead. Using pointers are a more efficient way to pass data to 
+functions because you don't have to copy large amounts of data. You can also use 
+const references to pass a struct to the function making the function have access 
+without coping the whole struct. We can improve "displayCatfoodData" by passing 
+the struct through pass by value or reference instead of doing each structure member 
+1 at a time.
