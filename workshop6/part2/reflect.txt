@@ -1,0 +1,51 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #6
+Full Name  : Andy Chong
+Student ID#: 150229558
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+1. Although it is possible to use all 3 iteration constructs to make them behave
+the same way, they can be different when it comes to efficency. A do while loop
+can be used if you have to execute the sequence at least 1 time. In my code we 
+have to prompt the user for input at least once therefore using a do while loop.
+
+Typically a while loop executes as long as said condition is true. So it can be
+more useful when checking if a condition is true.
+
+When working with arrays we favour the For loop because we can use it to manage 
+initializing a loop variable to a specific value and loop condition and updates.
+In my code, we had to store each attribute (cost, priority, finance) in an array
+and use it to find out to check for errors, display per item and calculate for 
+different priority levels, etc. Because the array is a fixed length we use a for
+loop to code the loop execution and control how many times we run it based on the
+array size.
+
+2. While writing and testing my code I ran into a big syntactic error that took
+me a while to find fix. I had put a space after using \n for a new line in my for
+loop so the first line that printed was fine but the lines after was not alligning
+with my first line. First I tried to locate the location of where the error was 
+(the printf statement) but couldn't find it so I commented out a line and ran the
+program again. (still didnt work) Then after isolating where the problem was supposed
+to be I finally found the error and corrected it.
+
+I also had a big semantic error in where my math was not adding up correctly for
+the amount by priority. I read the code out loud in the area of where the error
+was and tried to follow my data and tried to run my code making small adjustments
+to see if it would work properly. The problem was that I did not set my prioCost
+variable to zero and so it would work for the first one but would add the previous
+amount with the amount of the second item.
+
+3. First step would be to find the line of code that is causing this problem. I 
+would do this by finding that exact printf statement that prints that line. Then
+I would check to see if maybe if the output was hard coded or not. If it was hard
+coded make a variable to store user input netIcome and have a scanf to allow for
+user to make an input. If that not the case I would check to see if it is using
+the right variable data type and placeholder. Because it we are dealing with money
+I would check to make sure it is being stored as a double and the placeholder is
+%lf and the right Address of. (&) Then I would try running any change I made and 
+see if it outputs the correct way.
