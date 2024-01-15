@@ -1,0 +1,29 @@
+///////////////////////////////////////////////////////////////////////////
+                               Reflection
+                             Workshop - #7
+Full Name  : Andy Chong
+Student ID#: 150558229
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+///////////////////////////////////////////////////////////////////////////
+
+1. To achieve non-repetitive logic I used arrays since they let me store values without creating a variable for every turn. For loops and arrays are very integral to each other, therefore using these to evaluate current and previous positions and made sure that these held the correct value. I made sure to take into account all possible scenarios and made sure to update the current position and locations properly.
+
+2. Structures simplify the program by allowing it to be more modular and organized. Using structs to store data like player info keeps everything organized. By organizing the related data into a single struct it becomes simpler to manipulate data and understand its relationships. To add on, structs makes my program more modular allowing for easier expansion and modification in the future if there were to be different values. If there was a need to add more players or remove existing ones it can be done by modifying the struct definition and updating the variables. 
+
+3. I had 3 max number of nesting in my program logic.
+
+do{
+	if (inputPos)
+	{
+		For (i = 0; i < GameInfo.pathLength; i++)
+		{
+			if ((inputPos - 1) == i)
+			{
+			}
+		}
+	}
+}

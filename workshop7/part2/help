@@ -1,0 +1,142 @@
+ do
+    {
+        flag = 0;
+
+        if (positionInput)
+        {
+            printf("\n  ");
+            for (i = 0; i < GI.gameLenght; i++)
+            {
+                if ((positionInput - 1) == i)
+                {
+                    printf("%c", PI.playerSymbol);
+                }
+                else
+                {
+                    printf(" ");
+                }
+            }
+        }
+
+        printf("\n  ");
+        for (i = 0; i < GI.gameLenght; i++)
+        {
+            if (PI.pastPositions[i] == 0)
+            {
+                printf("-");
+            }
+
+            
+            if (PI.pastPositions[i] == 1 && GI.haveBomb[i] && GI.haveTreasure[i])
+            {
+                printf("&");
+            }
+            else if (PI.pastPositions[i] == 1 && GI.haveBomb[i])
+            {
+                printf("!");
+            }
+            else if (PI.pastPositions[i] == 1 && GI.haveTreasure[i])
+            {
+                printf("$");
+            }
+            else if (PI.pastPositions[i] == 1)
+            {
+                printf(".");
+            }
+        }
+
+        printf("\n  ");
+        for (i = 0; i < GI.gameLenght; i++)
+        {
+            if ((i + 1) % 10 != 0 || i == 0)
+            {
+                printf("|");
+            }
+            else
+            {
+                printf("%d", ((i + 1) / 10));
+            }
+        }
+
+        printf("\n  ");
+        for (i = 0; i < GI.gameLenght; i++)
+        {
+            printf("%d", ((i + 1) % 10));
+        }
+
+        putchar('\n');
+        printf("+---------------------------------------------------+\n");
+        printf("  Lives: %2d  | Treasures: %2d  |  Moves Remaining: %2d\n",
+            PI.remainLives, PI.treasureCnt, GI.remainMoves);
+        printf("+---------------------------------------------------+\n");
+
+        if (PI.remainLives > 0 && GI.remainMoves > 0)
+        {
+            flag = 1;
+
+            do
+            {
+                validValue = 1;
+                printf("Next Move [1-%d]: ", GI.gameLenght);
+                scanf("%d", &positionInput);
+
+                if (positionInput < 1 || positionInput > GI.gameLenght)
+                {
+                    validValue = 0;
+                    printf("  Out of Range!!!\n");
+                }
+            } while (!validValue);
+            putchar('\n');
+
+            if (PI.pastPositions[positionInput - 1])
+            {
+                printf("===============> Dope! You've been here before!\n");
+            }
+            else
+            {
+
+                PI.pastPositions[positionInput - 1] = 1;
+                GI.remainMoves--;
+
+                if (GI.haveTreasure[positionInput - 1] && GI.haveBomb[positionInput - 1])
+                {
+                    printf("===============> [&] !!! BOOOOOM !!! [&]\n");
+                    printf("===============> [&] !!! Life Insurance Payout !!! [&]\n");
+                    PI.treasureCnt++;
+                    PI.remainLives--;
+                    
+                }
+                else if (GI.haveTreasure[positionInput - 1])
+                {
+                    
+                    printf("===============> [$] $$$ Found Treasure! $$$ [$]");
+                    PI.treasureCnt++;
+                }
+                else if (GI.haveBomb[positionInput - 1])
+                {
+                    printf("===============> [!] !!! BOOOOOM !!! [!]\n");
+                    PI.remainLives--;
+
+                }
+                else
+                {
+                    printf("===============> [.] ... Nothing found here ... [.]\n");
+                }
+
+                if (PI.remainLives == 0)
+                {
+                    printf("\nNo more LIVES remaining!\n");
+                }
+            }
+        }
+    } while (flag);
+
+    putchar('\n');
+    printf("##################\n");
+    printf("#   Game over!   #\n");
+    printf("##################\n\n");
+
+    printf("You should play again and try to beat your score!");
+    putchar('\n');
+
+    return 0;
