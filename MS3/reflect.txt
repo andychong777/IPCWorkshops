@@ -1,0 +1,93 @@
+/*/////////////////////////////////////////////////////////////////////////
+                        Assignment 1 - Milestone 3
+Full Name  : Andy Chong
+Student ID#: 150558229
+Email      : achong11@myseneca.ca
+Section    : NAA
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+
+1. 
+int isTimeSlotAvailable(struct Date date, struct Time time, struct Appointment* app, int maxAppointments)
+The isTimeSlotAvailable function checks if a date and time slot are available for
+an appointment. It takes in a date, time, an array of Appointment struct, and the
+maximum number of appointments as arguments. The function compares the given date 
+and time with each appointment's date and time in a loop. If the function finds a 
+match, it returns 1, indicating that the time slot is not available. On the other
+hand, if there is no match, it returns 0, indicating that the time slot is available.
+This function is vital in preventing double booking of appointments and ensuring that
+users cannot schedule appointments at the same time.
+To implement this function, I placed it in the clinic.c Utility functions module
+since it deals with appointment-related operations. This function had to be able 
+to access and modify the Appointment struct and the maximum number of appointments 
+variables, which are declared in the same module. This approach makes the function 
+more modular and easier to manage since all appointment-related operations are 
+contained in one module. Additionally, it makes the code more organized and easier 
+to maintain in the long run.
+
+void sort(struct Appointment* appointments, int max)
+The sort() function is used to sort an array of struct Appointment by date and time.
+It does this using the insertion sort algorithm. The function loops through each 
+element of the array, comparing the current element to the previous element and 
+swapping them if necessary. This function is important because it ensures that 
+appointments are sorted in chronological order, making it easier for users to 
+view and manage their schedules. The sort() function is located in the clinic.c Utility 
+functions module, which is responsible for managing the appointment data and 
+ensuring its integrity. By having the sorting functionality in this module, the 
+appointment data is kept efficient for retrieval and display.
+
+void inputPhone(char* str, int minChar, int maxChar)
+The inputPhone function prompts the user to enter a phone number and checks if it 
+is valid. It takes in a pointer to a character string, minimum and maximum length 
+of the string as arguments. The function reads in each character and adds it to 
+the input string until it reaches the maximum length or a newline character. It 
+then checks if the input string is of the desired length, and if not, it prompts 
+the user to enter a valid phone number. This function is useful in ensuring that 
+the phone number inputted by the user is valid, formatted correctly, and the desired 
+length. It is used during appointment creation, ensuring that the user input is 
+correct and preventing invalid data from being entered. This function helps to 
+prevent errors in the data, improving the program's stability and reliability.
+
+2. In the client.c file, the number of times the scanf function was used was minimized 
+on purpose. This was done to improve the user's experience and prevent potential 
+errors that could arise from multiple scanf calls. Using scanf incorrectly can 
+cause unexpected problems, especially when reading input from the user. For 
+instance, if the user inputs a character instead of an integer, scanf can get stuck 
+in a loop and crash the program. To avoid these errors and enhance the user experience, 
+custom input functions like inputPhone and isTimeSlotAvailable were used instead of 
+scanf. These custom functions can handle user input and ensure that the data is 
+in the correct format, reducing the likelihood of unexpected behavior. Also, 
+custom functions can provide more detailed and useful error messages to the user, 
+such as prompting the user to enter a valid phone number or notifying the user 
+if the appointment time slot is already taken.
+
+3.
+I decided to put the isTimeSlotAvailable() function in the clinic.c Utility functions because 
+it checks if a specific time slot is available for an appointment. Since the Utility  
+module is responsible for managing the appointment data and ensuring its correctness, 
+it was logical to include the availability check functionality in this module. The 
+function requires the date, time, and array of appointments as input and provides a 
+boolean value that shows whether the time slot is open or not. This decision was 
+made to keep the server module responsible for appointment data management and to 
+maintain consistency and simplicity in the appointment scheduling logic by having 
+it centralized in one module.
+
+I put the sort() function in the Utility module because it manages the appointment 
+data and makes sure that it's correct. The function sorts the appointments based 
+on their date and time. It receives an array of appointments as input and returns 
+the sorted array. I decided to put the sorting functionality in the Utility module 
+because it's responsible for managing the appointment data and ensuring its integrity. 
+I also needed to make sure that the appointment data is sorted efficiently for 
+easy retrieval and display.
+
+I put the inputPhone() function in the User Interface module in core.c because it's 
+responsible for getting the user's phone number input. Since the phone number is 
+important information for creating an appointment, it made sense to have it in the
+User Interface module where the user interacts with the program. The function asks 
+the user to enter their phone number and checks if it meets the application's 
+requirements. This decision was made to keep the client module in charge of user 
+interaction and make sure that input validation is done as close to the user as possible.
